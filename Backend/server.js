@@ -7,7 +7,6 @@ const urlRouter = require('./src/routes/route.url')
 
 
 connectDB();
-
 app.use('/url', urlRouter)
 
 

@@ -1,7 +1,7 @@
 const express = require("express");
 const {
   generateNewShortCode,
-  handleRedirect
+  handleRedirect,getAnalytics,getAllUrls
 } = require("../controllers/controller.url");
 
 const router = express.Router();
@@ -10,6 +10,8 @@ const router = express.Router();
 router.post("/", generateNewShortCode);
 
 // redirect
+router.get("/analytics/:shortCode", getAnalytics);
 router.get("/:shortCode", handleRedirect);
+router.get("/all", getAllUrls);
 
 module.exports = router;

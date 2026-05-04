@@ -1,6 +1,7 @@
 var nanoId = require('nano-id');
 
 const URL = require('../models/models.url')
+const BASE_URL = "https://url-shortner-216y.onrender.com";
 
 async function generateNewShortCode(req,res) {
 
@@ -15,9 +16,9 @@ async function generateNewShortCode(req,res) {
         originalURL: body.url,
         visitHistory: []
     });
-    return res.json({
-  shortUrl: `http://localhost:3000/url/${shortID}`
-    });
+   return res.json({
+  shortUrl: `${BASE_URL}/url/${shortID}`
+});
 }
     catch (err) {
         console.log(err); 

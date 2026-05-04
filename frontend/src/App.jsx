@@ -7,7 +7,7 @@ function App() {
   const [urls, setUrls] = useState([]);
 
   const handleShorten = async () => {
-    const res = await fetch("http://localhost:3000/url", {
+    const res = await fetch("https://url-shortner-216y.onrender.com/url", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -23,7 +23,7 @@ function App() {
     const code = shortUrl.split("/").pop();
 
     const res = await fetch(
-      `http://localhost:3000/url/analytics/${code}`
+      `https://url-shortner-216y.onrender.com/url/analytics/${code}`
     );
 
     const data = await res.json();

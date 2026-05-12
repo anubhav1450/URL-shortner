@@ -96,7 +96,23 @@ async function getAllUrls(req, res) {
     return res.status(500).json({ error: "Server error" });
   }
 }
+async function deleteUrl(req, res) {
+  try {
+    const { shortCode } = req.params;
+
+    await URL.findOneAndDelete({ shortCode });
+
+    return res.json({
+      message: "Deleted successfully"
+    });
+
+  } catch (err) {
+    return res.status(500).json({
+      error: "Server error"
+    });
+  }
+}
 
     module.exports = {generateNewShortCode,
-        handleRedirect, getAnalytics,getAllUrls
+        handleRedirect, getAnalytics,getAllUrls,deleteUrl
     };

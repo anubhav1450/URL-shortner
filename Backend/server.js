@@ -7,7 +7,7 @@ const port = process.env.Port || 3000;
 
 
 connectDB();
-app.use('/url', urlRouter)
+app.use('/', urlRouter)
 
 
 app.listen(3000, ()=>{

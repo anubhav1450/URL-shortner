@@ -44,7 +44,7 @@ https://url-shortner-216y.onrender.com
 
 ## Preview
 
-![Application Screenshot](./url-short.png)
+![Application Screenshot](./URL-short.png)
 
 ---
 

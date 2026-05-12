@@ -1,15 +1,15 @@
 require("dotenv").config();
 
-const app = require("./src/app")
-const connectDB  = require("./src/db/db")
-const urlRouter = require('./src/routes/route.url')
-const port = process.env.Port || 3000;
+const app = require("./src/app");
+const connectDB = require("./src/db/db");
+const urlRouter = require("./src/routes/route.url");
 
+const port = process.env.PORT || 3000;
 
 connectDB();
-app.use('/', urlRouter)
 
+app.use("/", urlRouter);
 
-app.listen(3000, ()=>{
-    console.log("Server is Live")
-})
+app.listen(port, () => {
+  console.log("Server is Live");
+});

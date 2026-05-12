@@ -11,9 +11,7 @@ const router = express.Router();
 
 // create short URL
 router.post("/", generateNewShortCode);
-app.get("/test", (req, res) => {
-    res.send("Backend Working");
-});
+
 
 // redirect
 router.get("/all", getAllUrls);

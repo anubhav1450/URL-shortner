@@ -1,169 +1,91 @@
-# 🔗 URL Shortener with Analytics
+# URL Shortener
 
-A full-stack URL shortening service built using Node.js, Express, and MongoDB.
-It allows users to generate short URLs, redirect to original links, and track visit history.
+A full-stack URL Shortener application built using React, Node.js, Express, and MongoDB.
 
----
+The application allows users to generate short URLs, track analytics, copy links instantly, and manage URLs through a responsive dashboard interface.
 
-## 🚀 Features
+## Live Demo
 
-* 🔗 Generate short URLs using nanoid
-* 🔁 Redirect short URLs to original URLs
-* 📊 Track visit history (timestamp-based analytics)
-* ⚡ Fast lookup using indexed short codes
-* 🛠 REST API based backend
+Frontend:  
+https://urlsht-job9.onrender.com
 
----
-
-## 🧱 Tech Stack
-
-* **Backend:** Node.js, Express.js
-* **Database:** MongoDB, Mongoose
-* **Utilities:** nanoid
-* **API Testing:** Postman
+Backend:  
+https://url-shortner-216y.onrender.com
 
 ---
 
-## 📁 Project Structure
+## Features
 
-```
-src/
- ├── controllers/
- ├── models/
- ├── routes/
- ├── db/
- ├── app.js
- └── server.js
-```
+- URL shortening
+- Analytics tracking
+- Click history
+- Copy short URL
+- Delete URLs
+- Responsive UI
+- MongoDB integration
+- REST API architecture
 
 ---
 
-## ⚙️ Installation & Setup
+## Tech Stack
 
-### 1️⃣ Clone the repository
+### Frontend
+- React
+- Vite
+- Tailwind CSS
 
-```
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+
+---
+
+## Preview
+
+![Application Screenshot](./url-short.png)
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
 git clone https://github.com/anubhav1450/URL-shortner.git
 cd URL-shortner
 ```
 
----
+### Backend Setup
 
-### 2️⃣ Install dependencies
-
-```
+```bash
+cd Backend
 npm install
-```
-
----
-
-### 3️⃣ Setup environment variables
-
-Create a `.env` file in root:
-
-```
-MONGO_URI=your_mongodb_connection_string
-```
-
----
-
-### 4️⃣ Run the server
-
-```
 node server.js
 ```
 
-Server will start on:
+### Frontend Setup
 
-```
-http://localhost:3000
-```
-
----
-
-## 📌 API Endpoints
-
-### 🔹 Create Short URL
-
-```
-POST /url
-```
-
-**Request Body:**
-
-```
-{
-  "url": "https://example.com"
-}
-```
-
-**Response:**
-
-```
-{
-  "shortUrl": "http://localhost:3000/url/abc123"
-}
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
 ---
 
-### 🔹 Redirect to Original URL
+## Environment Variables
 
-```
-GET /url/:shortCode
-```
+### Frontend `.env`
 
-👉 Redirects to the original URL and logs visit history
-
----
-
-### 🔹 Get Analytics
-
-```
-GET /url/analytics/:shortCode
+```env
+VITE_API_URL=http://localhost:3000
 ```
 
-**Response:**
+### Backend `.env`
 
+```env
+MONGO_URI=your_mongodb_connection_string
+PORT=3000
 ```
-{
-  "totalClicks": 5,
-  "analytics": [
-    { "timestamp": "..." }
-  ]
-}
-```
-
----
-
-## 🧠 How It Works
-
-1. User submits a long URL
-2. Server generates a unique shortCode
-3. URL is stored in MongoDB
-4. When short URL is accessed:
-
-   * DB lookup happens
-   * Visit is recorded
-   * User is redirected
-
----
-
-## 🔮 Future Improvements
-
-* Custom short URLs
-* Link expiration
-* Authentication system
-* Frontend dashboard (React)
-
----
-
-## 👨‍💻 Author
-
-**Anubhav Kulshreshtha**
-
----
-
-## ⭐ If you like this project
-
-Give it a star on GitHub ⭐
